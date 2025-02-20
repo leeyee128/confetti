@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>撒花动画</title>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+  <style>
+    html, body { margin: 0; padding: 0; overflow: hidden; }
+    canvas { display: block; }
+  </style>
+</head>
+<body>
+  <canvas id="confetti-canvas"></canvas>
+  <script>
+    var canvas = document.getElementById('confetti-canvas');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    var myConfetti = confetti.create(canvas, { resize: true });
+    // 撒花动画：调整参数以达到最佳效果
+    myConfetti({
+      particleCount: 200,
+      spread: 70,
+      origin: { y: 0.6 }
+    });
+  </script>
+</body>
+</html>
